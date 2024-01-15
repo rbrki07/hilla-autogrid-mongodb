@@ -1,7 +1,14 @@
-# Custom project from Hilla
+# Hilla AutoGrid with MongoDB
 
-This project can be used as a starting point to create your own Hilla application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+This project uses a custom implementation of `ListService<T>` to connect a MongoDB database with Hilla's [AutoGrid](https://hilla.dev/docs/react/components/auto-grid) component.
+
+The project requires a local running MongoDB instance, like this:
+
+```shell
+podman run --name mongodb --detach --publish 27017:27017 --env MONGODB_INITDB_ROOT_USERNAME=user --env MONGODB_INITDB_ROOT_PASSWORD=password mongodb/mongodb-community-server:latest
+```
+
+Please check out the corresponding [blog post](https://www.rene-wilby.de/en/blog/hilla-autogrid-mongodb), to find out more about the project, its intention and how to use it. 
 
 ## Running the application
 
@@ -11,17 +18,6 @@ http://localhost:8080 in your browser.
 
 You can also import the project to your IDE of choice as you would with any
 Maven project.
-
-## Deploying to Production
-
-To create a production build, call `mvnw clean package -Pproduction` (Windows),
-or `./mvnw clean package -Pproduction` (Mac & Linux).
-This will build a JAR file with all the dependencies and front-end resources,
-ready to be deployed. The file can be found in the `target` folder after the build completes.
-
-Once the JAR file is built, you can run it using
-`java -jar target/myapp-1.0-SNAPSHOT.jar` (NOTE, replace
-`myapp-1.0-SNAPSHOT.jar` with the name of your jar).
 
 ## Project structure
 
